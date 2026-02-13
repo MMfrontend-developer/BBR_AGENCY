@@ -1,6 +1,5 @@
-import { div } from "framer-motion/client";
 import React, { useState } from "react";
-
+import Footer from "../components/Footer";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -27,6 +26,7 @@ const Contact = () => {
   };
 
   return (
+    <div>
      <div className="contact-main">
     <div className="contact-page">
 
@@ -91,6 +91,8 @@ const Contact = () => {
 
     </div>
     </div>
+      <Footer/>
+      </div>
   );
 };
 

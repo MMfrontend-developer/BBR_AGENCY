@@ -1,7 +1,8 @@
 import React from "react";
-
+import Footer from "../components/Footer";
 const ServicesPage = () => {
   return (
+    <div>
     <div className="services-page">
 
       <section className="services-hero">
@@ -52,6 +53,8 @@ const ServicesPage = () => {
       </section>
 
     </div>
+      <Footer/>
+      </div>
   );
 };
 

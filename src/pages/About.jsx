@@ -1,7 +1,9 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 const About = () => {
   return (
+    <div>
     <div className="about-page">
 
       {/* HERO SECTION */}
@@ -94,7 +96,8 @@ const About = () => {
 
         </div>
       </section>
-
+      </div>
+         <Footer/>
     </div>
   );
 };
