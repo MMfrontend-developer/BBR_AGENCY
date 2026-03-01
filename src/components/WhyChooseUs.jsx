@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 export default function WhyChooseUs() {
   const sectionRef = useRef(null);
   const [counted, setCounted] = useState(false);
-  const [projects, setProjects] = useState(80);
-  const [freelancers, setFreelancers] = useState(45);
+  const [projects, setProjects] = useState(100);
+  const [freelancers, setFreelancers] = useState(75);
   const [satisfaction, setSatisfaction] = useState(98);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function WhyChooseUs() {
           setCounted(true);
           setTimeout(() => {
             animateCount(setProjects, 200);
-            animateCount(setFreelancers, 50);
+            animateCount(setFreelancers, 75);
             animateCount(setSatisfaction, 98);
           }, 100);
           observer.unobserve(entry.target);
@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
           <h2 className="feature-title">Built for scale, designed for speed.</h2>
           <p style={{ marginBottom: '24px' }}>Thousands of clients and freelancers trust BRR Agency to deliver extraordinary results securely and efficiently.</p>
           
-          <div className="partners" style={{ justifyContent: 'flex-start', filter: 'invert(1) opacity(0.5)' }}>
+          <div className="partners" style={{ justifyContent: 'flex-start', filter: 'invert(1) opacity(0.5)', flexWrap: 'wrap' }}>
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" />
             <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" />
@@ -73,7 +73,7 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <div className="visual-box" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', padding: '30px' }}>
+          <div className="visual-box" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '20px', padding: '30px' }}>
             <div className="glass-panel" style={{ padding: '30px', textAlign: 'center', gridColumn: '1 / -1' }}>
               <h3 className="text-gradient" style={{ fontSize: '3.5rem', margin: 0 }}>{projects}+</h3>
               <p style={{ fontWeight: 600, color: '#fff', margin: '10px 0 0' }}>Projects Delivered</p>
