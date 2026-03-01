@@ -573,6 +573,10 @@
   filter: grayscale(0%) brightness(1);
 }
 
+.portfolio-item:hover {
+  z-index: 10;
+}
+
 .portfolio-overlay {
   position: absolute;
   inset: 0;

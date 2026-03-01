@@ -31,8 +31,13 @@ export default function Portfolio() {
     offset: ["start end", "end start"],
   });
 
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  // Reduce parallax effect on mobile to prevent extreme overlaps
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const range1 = isMobile ? [0, -30] : [0, -100];
+  const range2 = isMobile ? [0, 30] : [0, 100];
+
+  const y1 = useTransform(scrollYProgress, [0, 1], range1);
+  const y2 = useTransform(scrollYProgress, [0, 1], range2);
 
   return (
     <section id="portfolio" className="container section-padding" ref={ref}>

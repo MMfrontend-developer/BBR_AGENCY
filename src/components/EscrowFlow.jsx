@@ -20,7 +20,7 @@ export default function EscrowFlow() {
           <ul className="feature-list">
             <motion.li initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
               <div className="feature-list-icon"><FaUserTie /></div>
-              <div><strong>Client:</strong> Bring your freelancer — we handle secure escrow for you.</div>
+              <div><strong>Client:</strong> Bring your freelancer. We handle secure escrow for you.</div>
             </motion.li>
             <motion.li initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
               <div className="feature-list-icon"><FaShieldAlt /></div>
@@ -28,7 +28,7 @@ export default function EscrowFlow() {
             </motion.li>
             <motion.li initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
               <div className="feature-list-icon"><FaUserCog /></div>
-              <div><strong>Freelancer:</strong> Deliver the project confidently — funds are guaranteed.</div>
+              <div><strong>Freelancer:</strong> Deliver the project confidently. Funds are guaranteed.</div>
             </motion.li>
             <motion.li initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>
               <div className="feature-list-icon"><FaCheckCircle /></div>
