@@ -42,7 +42,7 @@ const Contact = () => {
         <div className="feature-row">
           <motion.div 
             className="feature-content glass-panel"
-            style={{ padding: '50px' }}
+            style={{ padding: 'clamp(24px, 5vw, 50px)' }}
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -72,7 +72,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <form className="glass-panel" style={{ padding: '50px', display: 'flex', flexDirection: 'column', gap: '20px' }} onSubmit={handleSubmit}>
+            <form className="glass-panel" style={{ padding: 'clamp(24px, 5vw, 50px)', display: 'flex', flexDirection: 'column', gap: '20px' }} onSubmit={handleSubmit}>
               <input 
                 type="text" 
                 name="name"
@@ -101,7 +101,7 @@ const Contact = () => {
                 style={{ width: '100%', padding: '16px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', color: '#fff', fontSize: '1rem', outline: 'none', resize: 'vertical' }}
               ></textarea>
 
-              <button type="submit" className="btn-premium" style={{ width: '100%', padding: '20px' }}>
+              <button type="submit" className="btn-premium" style={{ width: '100%', padding: '16px' }}>
                 Send Message
               </button>
               {submitted && <p style={{ color: '#4cc9f0', textAlign: 'center', marginTop: '10px' }}>✓ Message sent successfully!</p>}

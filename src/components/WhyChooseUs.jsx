@@ -73,18 +73,18 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <div className="visual-box" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '20px', padding: '30px' }}>
-            <div className="glass-panel" style={{ padding: '30px', textAlign: 'center', gridColumn: '1 / -1' }}>
-              <h3 className="text-gradient" style={{ fontSize: '3.5rem', margin: 0 }}>{projects}+</h3>
-              <p style={{ fontWeight: 600, color: '#fff', margin: '10px 0 0' }}>Projects Delivered</p>
+          <div className="visual-box" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px', padding: 'clamp(12px, 3vw, 20px)' }}>
+            <div className="glass-panel" style={{ padding: 'clamp(15px, 4vw, 20px)', textAlign: 'center', gridColumn: '1 / -1' }}>
+              <h3 className="text-gradient" style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', margin: 0 }}>{projects}+</h3>
+              <p style={{ fontWeight: 600, color: '#fff', margin: '5px 0 0', fontSize: '0.85rem' }}>Projects Delivered</p>
             </div>
-            <div className="glass-panel" style={{ padding: '30px', textAlign: 'center' }}>
-              <h3 style={{ fontSize: '2.5rem', margin: 0, color: '#4cc9f0' }}>{freelancers}+</h3>
-              <p style={{ fontSize: '0.9rem', margin: '10px 0 0' }}>Elite Talent</p>
+            <div className="glass-panel" style={{ padding: 'clamp(15px, 4vw, 20px)', textAlign: 'center', }}>
+              <h3 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', margin: 0, color: '#4cc9f0' }}>{freelancers}+</h3>
+              <p style={{ fontWeight: 600, fontSize: '0.8rem', margin: '5px 0 0' }}>Elite Talent</p>
             </div>
-            <div className="glass-panel" style={{ padding: '30px', textAlign: 'center' }}>
-              <h3 style={{ fontSize: '2.5rem', margin: 0, color: '#9d4edd' }}>{satisfaction}%</h3>
-              <p style={{ fontSize: '0.9rem', margin: '10px 0 0' }}>Satisfaction</p>
+            <div className="glass-panel" style={{ padding: 'clamp(15px, 4vw, 20px)', textAlign: 'center' }}>
+              <h3 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', margin: 0, color: '#9d4edd' }}>{satisfaction}%</h3>
+              <p style={{fontWeight: 600, fontSize: '0.8rem', margin: '5px 0 0' }}>Satisfaction</p>
             </div>
           </div>
         </motion.div>

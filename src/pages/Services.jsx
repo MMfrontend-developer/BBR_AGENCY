@@ -48,7 +48,7 @@ const ServicesPage = () => {
       </section>
 
       <section className="container section-padding" style={{ paddingTop: 0 }}>
-        <div className="portfolio-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))' }}>
+        <div className="portfolio-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
           {services.map((service, i) => (
             <motion.div 
               key={i} 
@@ -59,10 +59,10 @@ const ServicesPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
             >
-              <img src={service.img} alt={service.title} style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
-              <div style={{ padding: '40px' }}>
-                <h3 style={{ fontSize: '1.8rem', marginBottom: '16px', color: '#fff' }}>{service.title}</h3>
-                <p style={{ fontSize: '1.1rem' }}>{service.desc}</p>
+              <img src={service.img} alt={service.title} style={{ width: '100%', height: '250px', objectFit: 'cover' }} />
+              <div style={{ padding: 'clamp(20px, 5vw, 40px)' }}>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '16px', color: '#fff' }}>{service.title}</h3>
+                <p style={{ fontSize: '1rem' }}>{service.desc}</p>
               </div>
             </motion.div>
           ))}

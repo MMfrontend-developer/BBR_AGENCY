@@ -27,10 +27,10 @@ const About = () => {
 
       {/* MISSION + VISION */}
       <section className="container section-padding" style={{ paddingTop: 0 }}>
-        <div className="portfolio-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))' }}>
+        <div className="portfolio-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
           <motion.div 
             className="glass-panel" 
-            style={{ padding: '50px' }}
+            style={{ padding: 'clamp(20px, 5vw, 50px)' }}
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -44,7 +44,7 @@ const About = () => {
 
           <motion.div 
             className="glass-panel" 
-            style={{ padding: '50px' }}
+            style={{ padding: 'clamp(20px, 5vw, 50px)' }}
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
