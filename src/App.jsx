@@ -20,32 +20,41 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <Header />
+      <div className="app-wrapper">
+        {/* Animated Background Orbs */}
+        <div className="bg-orbs">
+          <div className="orb orb-1"></div>
+          <div className="orb orb-2"></div>
+          <div className="orb orb-3"></div>
+        </div>
 
-      <Routes>
-        {/* HOME PAGE */}
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <ValueStrip />
-              <Services />
-              <EscrowFlow />
-              <Portfolio />
-              <WhyChooseUs />
-              <Testimonials />
-              <CTA />
-              <Footer />
-            </>
-          }
-        />
+        <Header />
 
-        {/* OTHER PAGES */}
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
+        <Routes>
+          {/* HOME PAGE */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <ValueStrip />
+                <Services />
+                <EscrowFlow />
+                <Portfolio />
+                <WhyChooseUs />
+                <Testimonials />
+                <CTA />
+                <Footer />
+              </>
+            }
+          />
+
+          {/* OTHER PAGES */}
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

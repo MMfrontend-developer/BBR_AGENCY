@@ -6,68 +6,72 @@ export default function Portfolio() {
     {
       img: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80",
       title: "E-Commerce Dashboard",
+      category: "Web Development"
     },
     {
       img: "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?auto=format&fit=crop&w=800&q=80",
       title: "Marketing Website",
+      category: "Design & Conversion"
     },
     {
-  img: "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?auto=format&fit=crop&w=800&q=80",
-  title: "Automation Tool",
-},
-{
-  img: "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  title: "Brand Design Kit",
-},
-
+      img: "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?auto=format&fit=crop&w=800&q=80",
+      title: "Automation Tool",
+      category: "Software Engineering"
+    },
+    {
+      img: "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Brand Design Kit",
+      category: "Identity & Branding"
+    },
   ];
 
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"], // starts when visible
+    offset: ["start end", "end start"],
   });
 
-  // Parallax transforms for each row
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -50]); // top row slower
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 50]); // bottom row opposite
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
-    <section id="portfolio" className="portfolio-section" ref={ref}>
-      <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        Portfolio & Case Studies
-      </motion.h2>
-
-      <motion.p
-        className="section-subtitle"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        A few highlights from our freelancer collaborations.
-      </motion.p>
+    <section id="portfolio" className="container section-padding" ref={ref}>
+      <div className="section-header">
+        <motion.h2
+          className="section-title"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          Selected <span className="text-gradient">Case Studies</span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          style={{ maxWidth: '600px', margin: '0 auto', fontSize: '1.2rem' }}
+        >
+          A few highlights of what our top 1% freelancers have built.
+        </motion.p>
+      </div>
 
       <div className="portfolio-grid">
         {projects.map((p, i) => (
           <motion.div
             key={i}
-            className="portfolio-card"
-            style={{
-              y: i % 2 === 0 ? y1 : y2, // alternate float direction
-            }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: i * 0.2 }}
-            viewport={{ once: false, amount: 0.3 }}
+            className="portfolio-item"
+            style={{ y: i % 2 === 0 ? y1 : y2 }}
+            initial={{ opacity: 0, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
-            <img src={p.img} alt={p.title} />
+            <img src={p.img} alt={p.title} className="portfolio-img" />
             <div className="portfolio-overlay">
-              <h3>{p.title}</h3>
+              <h3 className="portfolio-title">{p.title}</h3>
+              <span className="portfolio-category">{p.category}</span>
             </div>
           </motion.div>
         ))}

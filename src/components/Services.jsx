@@ -1,90 +1,90 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCode, FaPenNib, FaBullhorn, FaPalette } from "react-icons/fa";
+import { FaCode, FaPenNib, FaBullhorn, FaPalette, FaRobot, FaWallet} from "react-icons/fa";
 
 export default function Services() {
   const services = [
     {
       icon: <FaCode />,
-      title: "Web Development",
-      text: "Modern, fast, and responsive web experiences tailored to your goals.",
+      title: "Web Engineering",
+      text: "Modern, high-performance web experiences tailored with precision and scalability.",
     },
     {
       icon: <FaPenNib />,
-      title: "Content Automation",
-      text: "Save time and scale content creation with automation workflows.",
+      title: "Content Architecture",
+      text: "Save time and scale content creation with AI-powered, human-refined workflows.",
     },
     {
       icon: <FaBullhorn />,
-      title: "SEO & Marketing",
-      text: "Boost your reach with expert SEO, ads, and growth-driven campaigns.",
+      title: "Growth Marketing",
+      text: "Data-driven SEO, hyper-targeted ads, and comprehensive growth campaigns.",
     },
     {
       icon: <FaPalette />,
-      title: "Design & Branding",
-      text: "Make your brand unforgettable with stunning visuals and identity design.",
-    },
+      title: "Brand Identity",
+      text: "Make your brand unforgettable with stunning, immersive visual designs.",
+    },  
+    {
+      icon: <FaRobot />,
+      title: "AI Automation",
+      text: "Automate your business processes with AI-powered tools to save time and increase efficiency.",
+    },  
+    {
+      icon: <FaWallet />,
+      title: "Payment Processing",
+      text: "Effortless payment processing with secure, fast, and reliable transactions.",
+    },    
   ];
 
-  // Container variant controls stagger timing
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.25, // delay between each card
-      },
-    },
-  };
-
-  // Each service card fades in and moves upward
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
+  const handleMouseMove = (e) => {
+    for(const card of document.getElementsByClassName("service-card")) {
+      const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+      card.style.setProperty("--mouse-x", `${x}px`);
+      card.style.setProperty("--mouse-y", `${y}px`);
+    }
   };
 
   return (
-    <motion.section
-      id="services"
-      className="services-section"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }} // triggers each time it appears
-    >
-      <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        Our Core Services
-      </motion.h2>
+    <section id="services" className="container section-padding services-section">
+      <div className="section-header">
+        <motion.h2
+          className="section-title"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          Our <span className="text-gradient">Core Capabilities</span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          style={{ maxWidth: '600px', margin: '0 auto', fontSize: '1.2rem'}}
+        >
+          We offer elite, end-to-end solutions to power your business success.
+        </motion.p>
+      </div>
 
-      <motion.p
-        className="section-subtitle"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        We offer top-tier solutions to power your business success.
-      </motion.p>
-
-      <motion.div className="services-grid" variants={containerVariants}>
+      <div className="services-grid" onMouseMove={handleMouseMove}>
         {services.map((s, i) => (
-          <motion.div key={i} className="service-card services" variants={cardVariants}>
+          <motion.div
+            key={i}
+            className="glass-panel service-card"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+          >
             <div className="service-icon">{s.icon}</div>
             <h3>{s.title}</h3>
             <p>{s.text}</p>
           </motion.div>
         ))}
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 }

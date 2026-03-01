@@ -4,51 +4,44 @@ import { FaLock, FaHandshake, FaUserCheck, FaBolt } from "react-icons/fa";
 
 export default function ValueStrip() {
   const values = [
-    { icon: <FaLock />, title: "Escrow Secured , Procteted" },
-    { icon: <FaHandshake />, title: "Transparent Workflows" },
-    { icon: <FaUserCheck />, title: "Top Freelancers, Verified" },
-    { icon: <FaBolt />, title: "Fast Turnaround, Reliable" },
+    { icon: <FaLock />, title: "Escrow Secured", desc: "Your funds are safe until the work is 100% approved." },
+    { icon: <FaHandshake />, title: "Transparent Workflow", desc: "Clear milestones, continuous updates, and zero surprises." },
+    { icon: <FaUserCheck />, title: "Top 1% Talent", desc: "Every freelancer is rigorously vetted for quality." },
+    { icon: <FaBolt />, title: "Lightning Fast", desc: "Start in 24 hours. Rapid turnarounds, reliable delivery." },
   ];
 
-  // Container variant controls stagger timing
   const containerVariants = {
     hidden: {},
     visible: {
-      transition: {
-        staggerChildren: 0.25, // delay between each pop
-      },
+      transition: { staggerChildren: 0.15 },
     },
   };
 
-  // Each item pops in smoothly
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.5, y: 40 },
+    hidden: { opacity: 0, scale: 0.95, y: 20 },
     visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 12,
-      },
+      opacity: 1, scale: 1, y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
   return (
-    <motion.section
-      className="value-strip"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }} // 👈 triggers each time you scroll in
-    >
-      {values.map((v, i) => (
-        <motion.div key={i} className="value-item" variants={itemVariants}>
-          <div className="value-icon">{v.icon}</div>
-          <h3>{v.title}</h3>
-        </motion.div>
-      ))}
-    </motion.section>
+    <section className="container value-strip-section">
+      <motion.div
+        className="value-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {values.map((v, i) => (
+          <motion.div key={i} className="glass-panel value-card" variants={itemVariants}>
+            <div className="value-icon-wrapper">{v.icon}</div>
+            <h3>{v.title}</h3>
+            <p>{v.desc}</p>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
   );
 }
