@@ -19,10 +19,10 @@ export default function Portfolio() {
       category: "Software Engineering"
     },
     {
-      img: "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      title: "Brand Design Kit",
-      category: "Identity & Branding"
-    },
+  img: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=800&q=80",
+  title: "Brand Design Kit",
+  category: "Identity & Branding"
+},
   ];
 
   const ref = useRef(null);
