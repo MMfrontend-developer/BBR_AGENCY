@@ -34,6 +34,8 @@ const About = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            whileHover={{ scale: 1.02, y: -5 }}
+            whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.8 }}
           >
             <h2 className="section-title" style={{ fontSize: '2rem' }}>Our Mission</h2>
@@ -48,6 +50,8 @@ const About = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            whileHover={{ scale: 1.02, y: -5 }}
+            whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.8 }}
           >
             <h2 className="section-title" style={{ fontSize: '2rem' }}>Our Vision</h2>
@@ -76,6 +80,8 @@ const About = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              whileHover={{ scale: 1.02, y: -5 }}
+              whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
             >
               <img src={member.img} alt={member.name} style={{ width: '100%', height: '300px', objectFit: 'cover', filter: 'grayscale(50%)' }} />
