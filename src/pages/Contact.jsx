@@ -42,7 +42,7 @@ const Contact = () => {
         <div className="feature-row">
           <motion.div 
             className="feature-content glass-panel"
-            style={{ padding: 'clamp(24px, 5vw, 50px)' }}
+            style={{ padding: 'clamp(40px, 5vw, 50px)' }}
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
